@@ -116,18 +116,22 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         # Longer, more triangular ship sprite
-        self.image_orig = pygame.Surface((32, 10), pygame.SRCALPHA)
-        
-        # Engine (Red)
-        pygame.draw.rect(self.image_orig, RED, (0, 2, 6, 6)) 
-        
-        # Main Body (Grey)
-        pygame.draw.rect(self.image_orig, GREY, (6, 4, 22, 2))  # Central spine
-        pygame.draw.rect(self.image_orig, GREY, (8, 2, 16, 6))  # Thicker part of the body
-        pygame.draw.rect(self.image_orig, GREY, (24, 3, 4, 4)) # Tapering section
-        
-        # Nose Tip (Green)
-        pygame.draw.rect(self.image_orig, GREEN, (28, 4, 4, 2))
+        self.image_orig = pygame.Surface((29, 11), pygame.SRCALPHA)
+        # Main body (green)
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (5, 0, 4, 7))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (4, 1, 1, 6))
+        pygame.draw.rect(self.image_orig, (176, 243, 43), (0, 2, 3, 6))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (9, 2, 3, 5))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (12, 3, 3, 8))
+        pygame.draw.rect(self.image_orig, (245, 5, 5), (3, 4, 1, 2))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (15, 5, 5, 4))
+        pygame.draw.rect(self.image_orig, (184, 24, 89), (20, 5, 4, 2))
+        pygame.draw.rect(self.image_orig, (184, 24, 89), (6, 7, 4, 4))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (10, 7, 2, 4))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (20, 7, 7, 2))
+        pygame.draw.rect(self.image_orig, (0, 255, 85), (27, 7, 2, 2))
+        pygame.draw.rect(self.image_orig, (190, 197, 208), (15, 9, 3, 2))
+        pygame.draw.rect(self.image_orig, (0, 255, 85), (18, 9, 2, 2))
         
         self.image = self.image_orig.copy()
         self.rect = self.image.get_rect()
@@ -246,18 +250,32 @@ class Lander(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         # Authentic pixel-art style Lander
-        self.image = pygame.Surface((16, 14), pygame.SRCALPHA)
+        self.image = pygame.Surface((17, 17), pygame.SRCALPHA)
         # Main body (green)
-        pygame.draw.rect(self.image, GREEN, (2, 0, 12, 2))
-        pygame.draw.rect(self.image, GREEN, (0, 2, 16, 10))
-        pygame.draw.rect(self.image, GREEN, (2, 12, 12, 2))
-        # Cockpit (red)
-        pygame.draw.rect(self.image, RED, (6, 4, 4, 6))
-        # Thrusters (yellow)
-        pygame.draw.rect(self.image, YELLOW, (0, 6, 2, 2))
-        pygame.draw.rect(self.image, YELLOW, (14, 6, 2, 2))
-        # Top detail (blue)
-        pygame.draw.rect(self.image, BLUE, (6, 0, 4, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (4, 0, 2, 10))
+        pygame.draw.rect(self.image, (0, 0, 255), (6, 0, 4, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (10, 0, 2, 10))
+        pygame.draw.rect(self.image, (4, 252, 0), (3, 2, 1, 6))
+        pygame.draw.rect(self.image, (4, 252, 0), (6, 2, 4, 1))
+        pygame.draw.rect(self.image, (4, 252, 0), (12, 2, 1, 6))
+        pygame.draw.rect(self.image, (0, 0, 255), (6, 3, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (7, 3, 2, 14))
+        pygame.draw.rect(self.image, (0, 0, 255), (9, 3, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (2, 5, 1, 3))
+        pygame.draw.rect(self.image, (4, 252, 0), (6, 5, 1, 5))
+        pygame.draw.rect(self.image, (4, 252, 0), (9, 5, 1, 5))
+        pygame.draw.rect(self.image, (4, 252, 0), (13, 5, 1, 3))
+        pygame.draw.rect(self.image, (4, 252, 0), (4, 10, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (11, 10, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (3, 11, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (12, 11, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (2, 12, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (13, 12, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (1, 13, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (14, 13, 1, 2))
+        pygame.draw.rect(self.image, (4, 252, 0), (0, 14, 1, 3))
+        pygame.draw.rect(self.image, (4, 252, 0), (15, 14, 1, 1))
+        pygame.draw.rect(self.image, (4, 252, 0), (16, 15, 1, 2))
         
         self.rect = self.image.get_rect()
         self.world_x = random.randint(0, WORLD_WIDTH)
@@ -326,7 +344,7 @@ class Mutant(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
         # Authentic pixel-art style Mutant
-        self.image = pygame.Surface((16, 8), pygame.SRCALPHA)
+        self.image = pygame.Surface((1, 8), pygame.SRCALPHA)
         pygame.draw.rect(self.image, ORANGE, (0, 2, 16, 4))
         pygame.draw.rect(self.image, ORANGE, (2, 0, 12, 8))
         pygame.draw.rect(self.image, RED, (6, 2, 4, 4))
